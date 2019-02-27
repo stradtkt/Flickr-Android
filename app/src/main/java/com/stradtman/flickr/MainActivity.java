@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements GetRawData.OnDown
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
     public void onDownloadComplete(String data, DownloadStatus status) {
         if(status == DownloadStatus.OK) {
             Log.d(TAG, "onDownloadComplete: data is " + data);
