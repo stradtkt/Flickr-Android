@@ -22,9 +22,9 @@ class GetFlickrJsonData implements GetRawData.OnDownloadComplete {
         void onDataAvailable(List<Photo> data, DownloadStatus status);
     }
 
-    public GetFlickrJsonData(String language, String baseURL, boolean matchAll, OnDataAvailable callback) {
-        mLanguage = language;
+    public GetFlickrJsonData(String baseURL, String language, boolean matchAll, OnDataAvailable callback) {
         mBaseURL = baseURL;
+        mLanguage = language;
         mMatchAll = matchAll;
         mCallback = callback;
     }

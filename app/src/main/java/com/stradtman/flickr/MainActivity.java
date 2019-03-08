@@ -25,6 +25,15 @@ public class MainActivity extends AppCompatActivity implements GetFlickrJsonData
     }
 
     @Override
+    protected void onResume() {
+        Log.d(TAG, "onResume start");
+        super.onResume();
+        GetFlickrJsonData getFlickrJsonData = new GetFlickrJsonData("https://api.flickr.com/services/feeds/photos_public.gne", "en-us", true);
+        getFlickrJsonData.executeOnSameThread("android, nougat");
+        Log.d(TAG, "onResume ends");
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
